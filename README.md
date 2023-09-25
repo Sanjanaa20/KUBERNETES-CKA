@@ -72,4 +72,16 @@ Kubernetes does not deploy containers directly on the worker nodes.The container
 ### YAML
 Kubernetes definition file always contains four top level fields.
 
-
+```
+apiVersion: V1
+kind: Pod
+metadata: 
+  name: myapp
+spec: 
+  containers:
+    -name: nginx container
+     image: nginx
+```
+To create 
+• kubectl create -f <filename>.yaml
+• kubectl get pods
