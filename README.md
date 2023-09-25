@@ -28,4 +28,11 @@ The kube-apiserver is the primary management component of kubernetes responsible
 
 ### Captain: Kubelet
 A kubelet is an agent that runs on a each node in the cluster. It listens for instruction from the kube-apiserver and deploys or destroys containers on the node as required.
-Kube-proxy service: Enables communication between webserver to database
+Kube-proxy service: Enables communication between webserver to database.
+
+| Name | Age| Location|
+| :---  | :---: |    ---: |
+| John   | 45    | Newyork    |
+| Sanju    | 20       | India |
+
+
