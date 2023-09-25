@@ -134,7 +134,7 @@ spec:
 
 ### Namespaces:
 To differentiate from one another pods.
-- kubectl get pods --namespace=research,to create kubectl create ns dev.
+- kubectl get pods --namespace=research, to create kubectl create ns dev
 - kubectl get pods --namespace=kube-system
 - kubectl get pods --all -namespace
 
@@ -148,11 +148,22 @@ To differentiate from one another pods.
 6. Start Nginx server
 
 ### Declarative: Direct approach giving final destination.
+ ```
  VM: web-server
  Package: nginx
  port: 8080
  path: /var/www/nginx
  code: git repo
+ ```
+Orchestration tools like Ansible,Puppet,chef,Terraform fall into declarative approach.
+
+**What if the object already exists?**
+When you update object, we should make sure that the object exists first before running.
+Update: kubectl apply -f nginx.yaml
+
+
+
+
 
 
 
