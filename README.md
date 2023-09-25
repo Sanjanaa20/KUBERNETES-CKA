@@ -77,6 +77,9 @@ apiVersion: V1
 kind: Pod
 metadata: 
   name: myapp
+  labels:
+    app: myapp-pod
+    type: front-end
 spec: 
   containers:
     -name: nginx container
@@ -85,3 +88,14 @@ spec:
 To create 
 • kubectl create -f <filename>.yaml
 • kubectl get pods
+
+## Replication controller: ReplicaSet
+
+When the application crashed and pod fails,users will no longer be able to access yoour application.To prevent users from losing access,to our application we would like to have more than one instance or pod running at the same time.If one fails,we still have one application.
+** Replication controller helps us run multiple instances of single pod ** `replicas:3`
+
+* Why do we need labels? *
+There could be hundreds of other pods in the cluster running different application.This is where labelling our pods during creation comes.
+
+## Deployment 
+The group of pods forms deployment and the pause,resume,modify etc call the changes are rolled out together and available in the kubernetes Deployment.
