@@ -26,7 +26,7 @@ Communication:
 The kube-apiserver is the primary management component of kubernetes responsible for orchestrating all operations within the cluster.
 •We need these software that can run container and container runtime engine.
 
-### Captain: Kubelet
+## Captain of the ship: Kubelet
 A kubelet is an agent that runs on a each node in the cluster. It listens for instruction from the kube-apiserver and deploys or destroys containers on the node as required.
 Kube-proxy service: Enables communication between webserver to database.
 
@@ -48,5 +48,12 @@ Kube-proxy service: Enables communication between webserver to database.
 "salary"=10,000,00
 }
 ```
-
+### Kube Controller Manager
+A controller is a process that continuously monitors the state of various components within the system.
+ 
+### Node Controller
+It monitors the health of the nodes if it stops receiving heartbeat from a node,it is marked as unreachable and waits for 5mins then removed and creates another one from the pod.
+#### Node monitor period-5s
+#### Node monitor grace period-40s
+#### POD eviction timeout-5m
 
