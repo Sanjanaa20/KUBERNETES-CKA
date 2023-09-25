@@ -125,10 +125,34 @@ spec:
     type: frontend
 ```
 
-> kubectl create -f service.yaml
-> kubectl get services 
-curl http://192.168.1.2:30008
-> kubectl describe svc kubernetes
+- kubectl create -f service.yaml
+- kubectl get services 
+  (curl http://192.168.1.2:30008)
+- kubectl describe svc kubernetes 
+
+##### To summarise,whether the single pod on a single node or multiple node on multiple nodes the service is created exactly the same without additional steps.
+
+### Namespaces:
+To differentiate from one another pods.
+- kubectl get pods --namespace=research,to create kubectl create ns dev.
+- kubectl get pods --namespace=kube-system
+- kubectl get pods --all -namespace
+
+## Infrastructure as a Code IAAC (types)
+### Imperative: Step by step instruction
+1. Provision a VM by the name 'webserver'
+2. Install Nginx software on it
+3. Edit configuration file to use port '8080'
+4. Edit configuration file fo web path '/var/www/nginx'
+5. Load web page from git repo
+6. Start Nginx server
+
+### Declarative: Direct approach giving final destination.
+ VM: web-server
+ Package: nginx
+ port: 8080
+ path: /var/www/nginx
+ code: git repo
 
 
 
