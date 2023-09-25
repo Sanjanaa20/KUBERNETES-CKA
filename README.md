@@ -92,10 +92,43 @@ To create
 ## Replication controller: ReplicaSet
 
 When the application crashed and pod fails,users will no longer be able to access yoour application.To prevent users from losing access,to our application we would like to have more than one instance or pod running at the same time.If one fails,we still have one application.
-** Replication controller helps us run multiple instances of single pod ** `replicas:3`
+**Replication controller helps us run multiple instances of single pod** `replicas:3`
 
-* Why do we need labels? *
+*Why do we need labels?*
 There could be hundreds of other pods in the cluster running different application.This is where labelling our pods during creation comes.
 
 ## Deployment 
 The group of pods forms deployment and the pause,resume,modify etc call the changes are rolled out together and available in the kubernetes Deployment.
+
+## Services 
+Enable communication between various components within and outside the application where IP ranges from 30,000 to 32,767 externally to access any server from the pod network.eg: frontend --> backend
+### Types
+1. NodePort 
+2. Cluster IP(Default service)
+3. Load Balancer
+
+```
+service.yaml for single pod
+apiVersion: V1
+kind: Service
+metadata: 
+  name: myapp-service
+  namespace: dev
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30008
+  selector:
+    app: myapp
+    type: frontend
+```
+
+> kubectl create -f service.yaml
+> kubectl get services 
+curl http://192.168.1.2:30008
+> kubectl describe svc kubernetes
+
+
+
