@@ -28,6 +28,8 @@ The kube-apiserver is the primary management component of kubernetes responsible
 
 ## Captain of the ship: Kubelet
 A kubelet is an agent that runs on a each node in the cluster. It listens for instruction from the kube-apiserver and deploys or destroys containers on the node as required.
+>kubectl run --help
+
 Kube-proxy service: Enables communication between webserver to database.
 
 **ETCD** is a distributed reliable key-value store that is simple,secure and fast.
@@ -56,4 +58,18 @@ It monitors the health of the nodes if it stops receiving heartbeat from a node,
 #### Node monitor period-5s
 #### Node monitor grace period-40s
 #### POD eviction timeout-5m
+
+### Kube scheduler 
+-which pod goes on where 
+-right container ends up right ship
+
+A **pod network** is an interval VN that spans across all the nodes in the cluster to which all the PODS connect.
+eg: web application deployed on the first node and the database application deployed-connect using IP of the database of POD.
+
+## POD
+Kubernetes does not deploy containers directly on the worker nodes.The containers are encapsulated into a kubernetes object known as **Pod** which is a single instance of an application.A single pod can have multiple containers.
+
+### YAML
+Kubernetes definition file always contains four top level fields.
+
 
