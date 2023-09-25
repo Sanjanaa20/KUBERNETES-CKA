@@ -40,13 +40,13 @@ Kube-proxy service: Enables communication between webserver to database.
 - stores information in document or pages.
  **When your data gets complex ends up storing JSON**
 
-'''
+```
 {
 "name"="Sanju"
 "age"=20
 "location"="India"
 "salary"=10,000,00
 }
-'''
+```
 
 
