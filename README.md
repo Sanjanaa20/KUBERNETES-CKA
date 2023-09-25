@@ -18,9 +18,9 @@ Control Node-> Host application as containers
 ### Schedulers 
 Scheduler in a kubernetes cluster  identifies as the right node to place a container in the right place by kube-scheduler
 Controllers:
-1.Controller-manager
-2.Node-Controller 
-3.Replication-Controller
+1.Controller-manager.
+2.Node-Controller.
+3.Replication-Controller.
 
 Communication:
 The kube-apiserver is the primary management component of kubernetes responsible for orchestrating all operations within the cluster.
@@ -30,9 +30,23 @@ The kube-apiserver is the primary management component of kubernetes responsible
 A kubelet is an agent that runs on a each node in the cluster. It listens for instruction from the kube-apiserver and deploys or destroys containers on the node as required.
 Kube-proxy service: Enables communication between webserver to database.
 
+**ETCD** is a distributed reliable key-value store that is simple,secure and fast.
+<key-value store>
+
 | Name | Age| Location|
 | :---  | :---: |    ---: |
 | John   | 45    | Newyork    |
 | Sanju    | 20       | India |
+- stores information in document or pages.
+ **When your data gets complex ends up storing JSON**
+
+'''JSON
+{
+"name"="Sanju"
+"age"=20
+"location"="India"
+"salary"=10,000,00
+}
+'''
 
 
