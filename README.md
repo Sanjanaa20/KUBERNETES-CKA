@@ -239,7 +239,28 @@ Orchestration tools like Ansible,Puppet,chef,Terraform fall into declarative app
 
 **What if the object already exists?**
 When you update object, we should make sure that the object exists first before running.
-Update: kubectl apply -f nginx.yaml
+- Update: kubectl apply -f nginx.yaml
+
+## Scheduling
+
+If the pod is pending then there is no scheduler present. To schedule use Nodename like under spec: nodeName: node01 in yaml file.
+
+### Taints and toleration 
+
+Nodes are taint and the bugs are tolerants
+
+```
+spec: 
+  tolerations: 
+  - key: "app"
+    operator: "Equal"
+    value: "blue"
+    effect: "NoSchedule"
+```
+- By imperative method it can be done by
+###### kubectl taint nodes node1 app=blue:NoSchedule
+### TYPES
+
 
 
 
