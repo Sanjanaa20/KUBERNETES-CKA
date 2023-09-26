@@ -268,7 +268,37 @@ spec:
 |3|Required| Required |
 |4| Preferred | Required |
 
+### Resource Limit:
+To prevent from insufficient CPU storage and memory by allocating the resources.
+- 1Gi(Gibibyte) - 1,073,741,824 bytes
+- 1Mi(Mebibyte) - 1,048,576 bytes
+- 1Ki(Kibibyte) - 1024 bytes
 
+```
+spec: 
+  resources:
+    requests: 
+       memory: "1Gi"
+       cpu: 1
+    limits: 
+       memory: "2Gi"
+       cpu: 2
+```
+### Daemon Sets:
+- Deploy multiple instances of pod.
+- Ensure that one copy of pod is always present in all nodes in the cluster.
+```
+   kubectl get pods daemonset --all-namespaces
+```
+
+### Static Pods:
+If we don't have API server, how does the kubelet creates pod,it does from the directory on the server designated to store information about pod.
+```
+/etc/kubernetes/manifests
+```
+- The pod created by the kubelet on its own without the intervention from the API server or rest of the k cluster components are known as static pods.
+
+   
 
 
 
