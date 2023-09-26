@@ -1,4 +1,4 @@
-# KUBERNETES-CKA
+# KUBERNETES-CKA Notes
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications. It is now maintained by the Cloud Native Computing Foundation.  This Kubernetes certification course helps you gain the knowledge required to design and deploy cloud native applications on a Kubernetes cluster. 
 
 ## Purpose
@@ -260,6 +260,13 @@ spec:
 - By imperative method it can be done by
 ###### kubectl taint nodes node1 app=blue:NoSchedule
 ### TYPES
+
+|  | During Scheduling| During Execution |
+| :---         |     :---:      |          ---: |
+| 1   | Required | Ignored|
+| 2 |Preferred |Ignored |
+|3|Required| Required |
+|4| Preferred | Required |
 
 
 
